@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 Library Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+    // Redirect to login if not logged in
+    if (!localStorage.getItem('token')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <div class="container">
+    <h1>📚 Library Management System</h1>
+
+    <!-- Add Book Form -->
+    <form id="bookForm">
+      <input type="text" id="title" placeholder="Book Title" required>
+      <input type="text" id="author" placeholder="Author" required>
+      <input type="text" id="genre" placeholder="Genre" required>
+      <button type="submit">Add Book</button>
+    </form>
+
+    <h2>Available Books</h2>
+    <ul id="bookList"></ul>
+
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
